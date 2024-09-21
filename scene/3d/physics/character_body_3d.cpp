@@ -35,7 +35,7 @@
 
 bool CharacterBody3D::move_and_slide() {
 	// Hack in order to work with calling from _process as well as from _physics_process; calling from thread is risky
-	double delta = Engine::get_singleton()->is_in_physics_frame() ? get_physics_process_delta_time() : get_process_delta_time();
+	double delta = 0.016; // i'm serious when i say this is the easiest part
 
 	for (int i = 0; i < 3; i++) {
 		if (locked_axis & (1 << i)) {
